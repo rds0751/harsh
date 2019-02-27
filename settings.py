@@ -17,16 +17,14 @@ DEBUG = True
 
 USE_TZ = True
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': location('db.sqlite'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
-}
+    'default': dj_database_url.config(
+        default='postgres://pusikvmqntkjtl:5e3ee148fdd048cc77c1cdf14c8e419d6c06a3799056fbedf4e6a004b9300f2e@ec2-54-225-121-235.compute-1.amazonaws.com:5432/d6lkfpssp98htu',
+        conn_max_age=600)}
+
+    
 ATOMIC_REQUESTS = True
 
 TIME_ZONE = 'Europe/London'
