@@ -11,7 +11,7 @@ from rzpay.dashboard.app import application as razorpay_dashboard
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 urlpatterns += i18n_patterns(
