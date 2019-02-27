@@ -19,3 +19,6 @@ pytest-cov==2.3.1
 flake8==2.2.3
 django-oscar
 django-bootstrap4
+gunicorn
+dj-static==0.0.6
+dj-database-url

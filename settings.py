@@ -14,6 +14,7 @@ location = lambda x: os.path.join(
 
 DEBUG = True
 
+WSGI_APPLICATION = 'wsgi.application'
 
 USE_TZ = True
 
@@ -24,7 +25,7 @@ DATABASES = {
         default='postgres://pusikvmqntkjtl:5e3ee148fdd048cc77c1cdf14c8e419d6c06a3799056fbedf4e6a004b9300f2e@ec2-54-225-121-235.compute-1.amazonaws.com:5432/d6lkfpssp98htu',
         conn_max_age=600)}
 
-    
+
 ATOMIC_REQUESTS = True
 
 TIME_ZONE = 'Europe/London'
