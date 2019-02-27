@@ -26,23 +26,23 @@
                                    <ul>
                                         {% if request.user.is_authenticated %}
                 <li>
-                    <a href="#">{% trans 'Change password' %}</a>
+                    <a href="/accounts/profile">{% trans 'Change password' %}</a>
                 </li>
                 <li>
-                    <a href="#">{% trans 'Change profile' %}</a>
+                    <a href="/accounts/profile">{% trans 'Change profile' %}</a>
                 </li>
                 <li>
-                    <a href="#">{% trans 'Change email' %}</a>
+                    <a href="/accounts/profile">{% trans 'Change email' %}</a>
                 </li>
                 <li>
-                    <a href="#">{% trans 'Log out' %}</a>
+                    <a href="/accounts/logout">{% trans 'Log out' %}</a>
                 </li>
             {% else %}
                 <li>
-                    <a href="#">{% trans 'Log in' %}</a>
+                    <a href="/accounts/profile">{% trans 'Log in' %}</a>
                 </li>
                 <li>
-                    <a href="#">{% trans 'Create an account' %}</a>
+                    <a href="/accounts/profile">{% trans 'Create an account' %}</a>
                 </li>
             {% endif %}
                                    </ul>

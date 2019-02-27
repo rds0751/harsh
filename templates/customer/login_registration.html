@@ -5,18 +5,36 @@
     {% trans 'Login or register' %} | {{ block.super }}
 {% endblock %}
 
-{% block breadcrumbs %}
+<!-- {% block breadcrumbs %}
     <ul class="breadcrumb">
         <li>
             <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
         </li>
         <li class="active">{% trans 'Login or register' %}</li>
     </ul>
-{% endblock %}
+{% endblock %} -->
+<!-- 
+{% block header %}{% endblock %} -->
 
-{% block header %}{% endblock %}
+    {% block tabcontent %}{% endblock tabcontent %}
+
+
 
 {% block content %}
+<section style="min-height: 20px; max-height: 100px;" class="banner-area">
+          <div class="container">
+               <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content col-lg-12">
+                    </div>
+               </div>
+          </div>
+     </section>
+<section class="about-area">
+          <div class="container">
+<div class="section-top-border">
+                    <div class="row">
+                         <div class="col-md-12">
+                              <div class="single-defination">
 
     <div class="row">
         <div class="col-sm-6 login_form">
@@ -37,5 +55,13 @@
             </form>
         </div>
     </div>
+                 </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
 
 {% endblock content %}
+     
+             
