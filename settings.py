@@ -13,7 +13,6 @@ location = lambda x: os.path.join(
 )
 
 DEBUG = True
-SQL_DEBUG = True
 
 
 USE_TZ = True
@@ -117,36 +116,7 @@ TEMPLATES = [
         },
     },
 ]
- 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['null'],
-            'propagate': True,
-            'level': 'INFO',
-        },
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        'oscar.checkout': {
-            'handlers': ['console'],
-            'propagate': True,
-            'level': 'INFO',
-        },
-    }
-}
+
 
 INSTALLED_APPS = [
     'django.contrib.auth',
