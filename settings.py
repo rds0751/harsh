@@ -18,6 +18,8 @@ WSGI_APPLICATION = 'wsgi.application'
 
 USE_TZ = True
 
+ALLOWED_HOSTS = ['softsmart.herokuapp.com']
+
 import dj_database_url
 
 DATABASES = {
