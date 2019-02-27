@@ -103,7 +103,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.i18n',
@@ -115,7 +114,6 @@ TEMPLATES = [
                 'oscar.apps.customer.notifications.context_processors.notifications',
                 'oscar.core.context_processors.metadata',
             ],
-            'debug': DEBUG
         },
     },
 ]
@@ -129,21 +127,6 @@ LOGGING = {
         },
         'simple': {
             'format': '%(levelname)s %(message)s'
-        },
-    },
-    'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
         },
     },
     'loggers': {
@@ -162,16 +145,6 @@ LOGGING = {
             'propagate': True,
             'level': 'INFO',
         },
-        'django.db.backends': {
-            'handlers': ['null'],
-            'propagate': False,
-            'level': 'DEBUG',
-        },
-        'razorpay': {
-            'handlers': ['console'],
-            'propagate': True,
-            'level': 'DEBUG',
-        },
     }
 }
 
@@ -184,7 +157,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.flatpages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
     # Apps from oscar
     'rzpay',
     'compressor',
