@@ -18,7 +18,7 @@ urlpatterns += i18n_patterns(
     # Razorpay integration...
     url(r'^checkout/razorpay/', include('rzpay.urls')),
     # Dashboard views for Razorpay
-    url(r'^dashboard/razorpay/', include(razorpay_dashboard.urls)),
+    url(r'^dashboard/razorpay/', razorpay_dashboard.urls),
     url(r'', include(application.urls)),
 )
 
