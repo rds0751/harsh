@@ -1,0 +1,49 @@
+{% load i18n %}
+        {% spaceless %}
+                {% if step == 2 or step == 3 or step == 4 %}
+                    <a href="{% url 'checkout:shipping-address' %}">
+                        
+                        <span>
+                            {% trans "1. Shipping address" %}
+                        </span><i class="lnr lnr-arrow-right"></i>
+                    </a>
+                {% else %}
+                    <span class="navbar-text">
+                        {%  trans "1. Shipping address" %}
+                    </span><i class="lnr lnr-arrow-right"></i>
+                {% endif %}
+
+                {% if step == 3 or step == 4 %}
+                    <a href="{% url 'checkout:shipping-method' %}">
+                        <span>
+                            {% trans "2. Shipping method" %}
+                        </span>
+                        <i class="lnr lnr-arrow-right"></i>
+                    </a>
+                {% else %}
+                    <span class="navbar-text">
+                        {%  trans "2. Shipping method" %}
+                    </span><i class="lnr lnr-arrow-right"></i>
+                {% endif %}
+
+                {% if step == 4 %}
+                    <a href="{% url 'checkout:payment-details' %}">
+                        <i class="lnr lnr-thumbs-up"></i>
+                        <span>
+                            {% trans "3. Payment" %}
+                        </span><i class="lnr lnr-arrow-right"></i>
+                    </a>
+                {% else %}
+                    <span class="navbar-text">
+                        {%  trans "3. Payment" %}
+                    </span><i class="lnr lnr-arrow-right"></i>
+                {% endif %}
+
+                <span class="navbar-text">
+                    {% trans "4. Preview" %}
+                </span><i class="lnr lnr-arrow-right"></i>
+
+                <span class="navbar-text">
+                    {% trans "5. Confirmation" %}
+                </span>
+        {% endspaceless %}

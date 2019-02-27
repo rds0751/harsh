@@ -1,0 +1,58 @@
+ {% load static %}
+
+{% load i18n %}<!-- PRE LOADER --> 
+          <!-- Start Header Area -->
+     <header id="header">
+          <div class="container">
+               <div class="row align-items-center justify-content-between d-flex">
+                    <div id="logo">
+                         <a href="/"><img src="{% static 'img/blue.png' %}" alt="" title="" style="width: 200px;" /></a>
+                    </div>
+                    <nav id="nav-menu-container">
+                         <ul class="nav-menu">
+                              <li><a href="/">Home</a></li>
+                              <li><a href="/about-us">About</a></li>
+                              <li class="menu-has-children"><a href="/en-gb/catalogue">Solutions</a>
+                                   <ul>
+                                        <li><a href="/products/pte">PTE</a></li>
+                                        <li><a href="/products/ielts">IELTS</a></li>
+                                        <li><a href="/products/celpip">CELPIP</a></li>
+                                        <li><a href="/products/immi">IMMIHANDLER</a></li>
+                                        <li><a href="/products/combo">Others</a></li>
+                                   </ul>
+                              </li>
+                              <li><a href="/contact">Contact</a></li>
+                              <li><a class="menu-has-children" href="/accounts/profile">{% if request.user.is_authenticated %}{{ request.user }}{% else %} Accounts{% endif %}</a>
+                                   <ul>
+                                        {% if request.user.is_authenticated %}
+                <li>
+                    <a href="#">{% trans 'Change password' %}</a>
+                </li>
+                <li>
+                    <a href="#">{% trans 'Change profile' %}</a>
+                </li>
+                <li>
+                    <a href="#">{% trans 'Change email' %}</a>
+                </li>
+                <li>
+                    <a href="#">{% trans 'Log out' %}</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="#">{% trans 'Log in' %}</a>
+                </li>
+                <li>
+                    <a href="#">{% trans 'Create an account' %}</a>
+                </li>
+            {% endif %}
+                                   </ul>
+                              </li>
+                              <li>
+                              {% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}
+                              </li>
+                         </ul>
+                    </nav><!-- #nav-menu-container -->
+               </div>
+          </div>
+     </header>
+     <!-- End Header Area -->

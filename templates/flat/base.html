@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load i18n %}
+ 
+<!-- {% block title %}
+    {{ flatpage.title}} | {{ block.super }}
+{% endblock %} -->
+
+<!-- {% block header%}
+    <div class="page-header action">
+        {% if user.is_staff %}
+            <a class="pull-right hidden-xs" href="{% url 'dashboard:page-update' pk=flatpage.id %}"><small><i class="icon-edit"></i> {% trans "Edit this page" %}</small></a>
+        {% endif %}
+        <h1>{{ flatpage.title }}</h1>
+    </div>
+{% endblock %} -->
+
+<!-- {% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{{ homepage_url }}">{% trans "Home" %}</a>
+        </li>
+        <li class="active">{{ flatpage.title }}</li>
+    </ul>
+{% endblock %} -->
+
+{% block content %}
+     <section class="page_heading">
+                          <div class="overly_bg">
+                              <div class="container">
+                                  <div class="row">
+                                       <h2 class="heading_title">{{ flatpage.title }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                      <!--Page heading End Here-->
+                      <section class="about_wrapper">
+                    <div class="container">
+                      <div class="row">
+                          <div class="col-md-12 col-sm-12">
+                                  {{ flatpage.content }}
+                              </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load promotion_tags %}
+
+{% block styles %}
+    {% comment %}
+        If you are developing Oscar's CSS, or overriding Oscar's CSS
+        files in your project, then set OSCAR_USE_LESS = True in your
+        settings file. This will enable the on-the-fly less compiler.
+    {% endcomment %}
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+     <!--CSS============================================= -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+     <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+     <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
+{% endblock %}
+
+{% block layout %}
+<!--     {# Top-horizontal bar with account, notifictions, dashboard links #}
+    {% include "partials/nav_accounts.html" %}
+
+    {# Site logo/title, mini-basket, browse dropdown and searchbox #}
+ -->
+        {% block navigation %}
+            {% include "partials/nav_primary.html" %}
+        {% endblock %}
+
+    {# Main content of page - other layout templates may override this block #}
+    {% block content_wrapper %}
+               <!--  {% block header %}
+                        <h1>{% block headertext %}{% endblock %}</h1>
+                {% endblock %} -->
+
+                {% include "partials/alert_messages.html" %}
+                {% block subnavigation %}{% endblock %}
+
+                    {% block subheader %}{% endblock subheader %}
+
+                    {# Render promotions #}
+                    <div id="promotions">
+                        {% for promotion in promotions_page %}
+                            {% render_promotion promotion %}
+                        {% endfor %}
+                    </div>
+                    
+
+                    {# Div exists for AJAX updates to entire content section #}
+{% block content %}{% endblock %}
+
+    {% endblock %}
+
+    {% include "partials/footer.html" %}
+{% endblock %}
+
+{% block cdn_scripts %}
+  {{ block.super }}
+{% endblock %}
+
+{# Local scripts #}
+{% block scripts %}
+    {{ block.super }}
+     <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+     <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+     <script src="{% static 'js/easing.min.js' %}"></script>
+     <script src="{% static 'js/hoverIntent.js' %}"></script>
+     <script src="{% static 'js/superfish.min.js' %}"></script>
+     <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+     <script src="{% static 'js/parallax.min.js' %}"></script>
+     <script src="{% static 'js/waypoints.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+     <script src="{% static 'js/mail-script.js' %}"></script>
+     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" %}"></script>
+    <script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}"></script>
+{% endblock %}
+
+{% block extrascripts %}
+    {% include "partials/extrascripts.html" %}
+    {{ block.super }}
+{% endblock %}
+
+{% block onbodyload %}
+    {{ block.super }}
+    oscar.init();
+{% endblock %}

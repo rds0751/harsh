@@ -1,0 +1,75 @@
+{% extends "layout_2_col.html" %}
+
+{% load i18n %}
+
+
+
+
+    <section style="min-height: 20px; max-height: 100px;" class="banner-area">
+          <div class="container">
+               <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content col-lg-12">
+                         <div class="link-nav">
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+        {% block title %}
+    {{ page_title }} | {% trans 'Account' %} | {{ block.super }}
+{% endblock %}
+
+{% block body_class %}account-profile{% endblock %}
+
+
+
+{% block headertext %}{{ page_title }}{% endblock %}
+
+{% block column_left %}
+    <ul class="nav nav-pills nav-stacked">
+        {% block standard_tabs %}
+            {% include 'customer/partials/standard_tabs.html' %}
+        {% endblock %}
+    </ul>
+{% endblock %}
+   
+
+
+<!-- 
+            The main nav on checkout pages contain links to modal flatpages
+            {% block modal %}
+                {% load flatpages %}
+                {% get_flatpages '/order/' as flatpages %}
+                {% for page in flatpages %}
+                <div id="{{ page.title|slugify }}" class="modal hide fade">
+                    <div class="modal-header">
+                        <a class="close" data-dismiss="modal">×</a>
+                        <h3>{{ page.title }}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="large-content">
+                            {{ page.content|safe }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endblock %} -->
+            <section class="about-area">
+          <div class="container">
+<div class="section-top-border">
+                    <div class="row">
+                         <div class="col-md-12">
+                              <div class="single-defination">
+                              {% block content %}
+    {% block tabcontent %}{% endblock tabcontent %}
+{% endblock content %}
+                                 
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+
+
