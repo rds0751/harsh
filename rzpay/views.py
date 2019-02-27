@@ -5,7 +5,7 @@ from django.views.generic import RedirectView, View
 from django.conf import settings
 from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.utils import six
 from django.utils.translation import ugettext_lazy as _
