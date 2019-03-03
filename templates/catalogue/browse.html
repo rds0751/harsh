@@ -109,10 +109,17 @@
 <div class="section-top-border">
                     <div class="row">
                          <div class="col-md-12">
-                              <div class="single-defination">
-                                {% for product in products %}
-                              {% render_product product %}
-                                   {% endfor %}                                   
+                              <div class="single-defination" align="center">
+                                <h2>{% trans "All Products" %}</h2>
+                                <br>
+                                <br>
+                               <ul class="row">
+                {% for product in products %}
+                <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    {% render_product product %}
+                </li>
+                {% endfor %}
+            </ul>                                  
                               </div>
                          </div>
                     </div>
