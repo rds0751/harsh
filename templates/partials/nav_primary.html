@@ -48,7 +48,8 @@
                                    </ul>
                               </li>
                               <li>
-                              {% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}
+                                {% if request.user.is_authenticated %}{% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}{% else %} {% endif %}
+                              
                               </li>
                          </ul>
                     </nav><!-- #nav-menu-container -->
