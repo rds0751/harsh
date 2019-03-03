@@ -103,21 +103,23 @@
     </form> -->
 
     {% if products %}
-    {% for product in products %}
+    
     <section class="about-area section-gap">
           <div class="container">
 <div class="section-top-border">
                     <div class="row">
-                         <div class="col-md-4">
+                         <div class="col-md-12">
                               <div class="single-defination">
-                              {% render_product product %}                                   
+                                {% for product in products %}
+                              {% render_product product %}
+                                   {% endfor %}                                   
                               </div>
                          </div>
                     </div>
                </div>
           </div>
      </section>
-     {% endfor %}
+
      {% include "partials/pagination.html" %}
      {% else %}
         <p class="nonefound">{% trans "No products found." %}</p>
