@@ -152,14 +152,10 @@
 
 
     {% block formactions %}
-        <div class="well">
-        <div class="sub-header">
-            <h3>{% trans "Razorpay" %}</h3>
-        </div>
-        <p>{% trans "Click on the below icon to pay using Razorpay but where the shipping address and method is already chosen on the merchant site." %}</p>
-        <div style="overflow:auto"><a href="{% url 'razorpay-direct-payment' %}"><img src="https://razorpay.com/blog/assets/images/rzp-logo-positive.png"></a>&nbsp;</div>
-    </div>
-    {% endblock formactions %}
+<div class="form-actions">
+    <a href="{% url 'checkout:index' %}" class="pull-right btn btn-large btn-primary">{% trans "Proceed to checkout" %}</a>
+</div>
+{% endblock formactions %}
 
 {% else %}
     {% block emptybasket %}
