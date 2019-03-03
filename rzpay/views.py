@@ -79,7 +79,7 @@ class PaymentView(CheckoutSessionMixin, View):
             raise EmptyBasketException()
         order_total = self.build_submission()['order_total']
         user = self.request.user
-        amount = order_total
+        amount = order_total.incl_tax
         if self.request.user.is_authenticated():
             email = self.request.user.email
         else:
