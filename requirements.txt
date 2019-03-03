@@ -25,4 +25,3 @@ dj-static==0.0.6
 dj-database-url
 psycopg2
 razorpay
-django-oscar-support
