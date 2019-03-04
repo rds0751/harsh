@@ -135,6 +135,7 @@ INSTALLED_APPS = [
     # Vendor apps
     'bootstrap4',
     'contact',
+    'demo',
 ]
 
 DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap-responsive.html'

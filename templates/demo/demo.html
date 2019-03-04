@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact Us &middot; {{ block.super }}{% endblock %}
+
+{% block breadcrumb-wrapper %}{% endblock %}
+ 
+{% block content %}
+<!-- Start Banner Area -->
+     <section class="home-banner-area relative" style="max-height: 100px;">
+          <div class="container">
+               <div class="row fullscreen d-flex align-items-center justify-content-center">
+               </div>
+          </div>
+     </section>
+     <!-- End Banner Area -->
+ <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2><br>Get a Free Demo</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" >
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {% include 'partials/form_fields_inline.html' with field=form.name %}
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
