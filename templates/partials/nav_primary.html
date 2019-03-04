@@ -22,7 +22,7 @@
                                    </ul>
                               </li>
                               <li><a href="/contact">Contact</a></li>
-                              <li><a class="menu-has-children" href="/accounts/profile">{% if request.user.is_authenticated %}{{ request.user }}{% else %} Accounts{% endif %}</a>
+                              <li><a class="menu-has-children" href="/accounts/profile">{% if request.user.is_authenticated %}Hi! {{ request.user.first_name }}{% else %} Accounts{% endif %}</a>
                                    <ul>
                                         {% if request.user.is_authenticated %}
                 <li>
