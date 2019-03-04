@@ -20,7 +20,7 @@ urlpatterns += i18n_patterns(
     # Dashboard views for Razorpay
     url(r'^dashboard/razorpay/', razorpay_dashboard.urls),
     url(r'', include(application.urls)),
-    url(r'^contact/', include('demo.urls', namespace='demo')),
+    url(r'^demo/', include('demo.urls', namespace='demo')),
     url(r'^contact/', include('contact.urls', namespace='contact')),
 )
 
