@@ -134,7 +134,11 @@ INSTALLED_APPS = [
     'widget_tweaks',
     # Vendor apps
     'bootstrap4',
+    'contact',
 ]
+
+DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap-responsive.html'
+
 
 TREE_TYPES = (
     ('Marketing.LevelTree', 'LevelTree'),

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact Us &middot; {{ block.super }}{% endblock %}
+
+{% block breadcrumb-wrapper %}{% endblock %}
+ 
+{% block content %}
+<!-- Start Banner Area -->
+     <section class="home-banner-area relative" style="max-height: 100px;">
+          <div class="container">
+               <div class="row fullscreen d-flex align-items-center justify-content-center">
+               </div>
+          </div>
+     </section>
+     <!-- End Banner Area -->
+ <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2><br>Connect With Us</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" >
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {% include 'partials/form_fields_inline.html' with field=form.name %}
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <div class="image-responsive" align="center">
+                        <h2><br>Find Us on Map</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.8682024653717!2d76.45209511455997!3d30.35469538177051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39102938f4ee4337%3A0x76c98897e26f1f5d!2sAdBazzar+%7C+Digital+Marketing+Company+%7C+SEO%2C+SMO%2C+Web+Development+%26+UNI+POLE+in+Patiala+Punjab+India!5e0!3m2!1sen!2sin!4v1549713952652" width="600" height="450" frameborder="0" style="border:2px; border-radius: 5px;" allowfullscreen></iframe>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

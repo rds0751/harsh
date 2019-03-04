@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load render_table from django_tables2 %}
+
+{% block title %}Contact List &middot; {{ block.super }}{% endblock %}
+
+{% block breadcrumb-wrapper %}{% endblock %}
+ 
+{% block content %}
+<!-- Start Banner Area -->
+     <section class="home-banner-area relative" style="max-height: 100px;">
+          <div class="container">
+               <div class="row fullscreen d-flex align-items-center justify-content-center">
+               </div>
+          </div>
+     </section>
+     <!-- End Banner Area -->
+    <section id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h1 class="title">Happy Clients</h1>
+                        <p><br></p>
+                    </div>
+                    <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        {% render_table items %}
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+{% endblock %}
