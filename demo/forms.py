@@ -8,6 +8,13 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
+    OPTION = (
+        ("CELPIP","CELPIP"),
+        ("IELTS","IELTS"),
+        ("PTE","PTE"),
+        ("ALL","ALL"),
+        )
+
     name = forms.CharField(
         max_length=100,
         required=True,
@@ -17,15 +24,12 @@ class ContactForm(forms.ModelForm):
         required=True,
         widget=forms.TextInput(attrs={'type': "text", 'class': "form-control", 'placeholder': "Phone Number *", 'required': ""}),
     )
-    subject = forms.CharField(
+    email = forms.EmailField(
         max_length=100,
         required=True,
         widget=forms.TextInput(attrs={'type': "text", 'class': "form-control", 'placeholder': "Subject *", 'required': ""}),
     )
-    message = forms.CharField(
-        required=True,
-        widget=forms.Textarea(attrs={'type': "text", 'class': "form-control", 'placeholder': "Message *", 'required': ""}),
-    )
+    products = forms.CharField(widget=forms.Select(choices=OPTION, attrs={'class':'form-control','tabindex':1}))
 
     class Meta:
         model = Contact

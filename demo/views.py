@@ -20,8 +20,8 @@ class ContactView(FormView):
 
         model.name = form.cleaned_data['name']
         model.phone = form.cleaned_data['phone']
-        model.subject = form.cleaned_data['subject']
-        model.message = form.cleaned_data['message']
+        model.email = form.cleaned_data['email']
+        model.products = form.cleaned_data['products']
         model.save()
         if form.send_email():
             messages.info(self.request, 'Thank you for your message. We will be in touch shortly.')

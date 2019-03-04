@@ -88,6 +88,8 @@ MIDDLEWARE = (
     'oscar.apps.basket.middleware.BasketMiddleware',
 )
 
+OSCAR_SHOP_NAME = "PTE | IELTS | CELPIP"
+
 INTERNAL_IPS = ('127.0.0.1',)
 
 ROOT_URLCONF = 'urls'
