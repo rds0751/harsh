@@ -1,0 +1,30 @@
+﻿*.sw[po]
+*.py[oc]
+.DS_Store
+.cache/
+
+# Packaging
+dist
+build/
+django_oscar_razorpay.egg-info/
+docs/_build
+
+# Testing
+htmlcov
+.tox
+.coverage
+.coveralls.yml
+
+# Database
+/db.sqlite
+
+# Sensitive data
+TODO
+integration.py
+
+# Sandbox
+/media
+/keys.py
+
+# Virtualenv
+venv
